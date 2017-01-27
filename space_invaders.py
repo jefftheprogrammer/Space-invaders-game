@@ -27,14 +27,14 @@ while True: # main game loop
     if keypress[K_RIGHT]:
         cx=cx+5
         if cx == width-40:# boundaries
-            print("outside boudary limits")
+            print("outside boundary limits")
             cx=cx+5
     elif keypress[K_LEFT]:
         if cx == 0:# boundaries
-            print("outside boudary limits")
+            print("outside boundary limits")
             cx=cx+5
         cx=cx-5
-        
+
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
