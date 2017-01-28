@@ -14,6 +14,7 @@ pygame.display.set_caption('space invaders!')
 white = (225,225,225)
 
 crossImg = pygame.image.load("cross.png")
+spriteLength = 40
 cx = 400
 cy = 560
 
@@ -23,13 +24,13 @@ while True: # main game loop
     DISPLAY.fill(white)
     DISPLAY.blit(crossImg,(cx,cy))
     keypress = pygame.key.get_pressed()# finds what key the user is pressing
-
-    if keypress[K_RIGHT]:
+    print(cx,cy)#debugging
+    if keypress[K_RIGHT]:#For some reason, K_RIGHT means left
         cx=cx+5
-        if cx == width-40:# boundaries
+        if cx == width-spriteLength:# boundaries
             print("outside boundary limits")
-            cx=cx+5
-    elif keypress[K_LEFT]:
+            cx=cx-5
+    elif keypress[K_LEFT]:#For some reason, K_LEFT means right
         if cx == 0:# boundaries
             print("outside boundary limits")
             cx=cx+5
