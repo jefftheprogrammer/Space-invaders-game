@@ -1,7 +1,7 @@
 # IMPORTS
 import pygame, sys
 from pygame.locals import *
-from space_invader import *
+from space_invader import invader
 pygame.init()
 ###################
 #IMAGE SIZE AND FPS
@@ -20,6 +20,7 @@ cx = 400
 cy = 560
 boundaryRight = width-spriteLength
 keypress = ""
+invader = invader()
 
 while True: # main game loop
     DISPLAY.fill(white)
@@ -28,9 +29,9 @@ while True: # main game loop
     #print(cx,cy)# debugging
 
     if keypress[K_RIGHT]:# right
-        invader.move_right(cx,boundaryRight)# Calls a function from another file
+        cx = invader.move_right(cx,boundaryRight)# Calls a function from another file
     elif keypress[K_LEFT]:# left
-        invader.move_left(cx)# Calls a function from another file
+        cx = invader.move_left(cx)# Calls a function from another file
 
     for event in pygame.event.get():
         if event.type == QUIT:
