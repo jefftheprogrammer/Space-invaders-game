@@ -20,7 +20,7 @@ cx = 400
 cy = 560
 boundaryRight = width-spriteLength
 keypress = ""
-invader = invader()
+invader = invader(cx,boundaryRight)
 
 while True: # main game loop
     DISPLAY.fill(white)
